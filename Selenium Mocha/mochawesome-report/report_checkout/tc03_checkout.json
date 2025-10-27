@@ -1,0 +1,141 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-27T22:48:35.174Z",
+    "end": "2025-10-27T22:48:42.335Z",
+    "duration": 7161,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "83dff2e4-a621-4346-b5ff-0ea8dbc1c375",
+      "title": "",
+      "fullFile": "D:\\Bootcamp QA\\uiAutomation_nyoba doang\\Test Case\\tc03_checkout.js",
+      "file": "\\Test Case\\tc03_checkout.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e019b1bd-4455-472c-b4a3-463d1adcb9b9",
+          "title": "SAUCEDEMO",
+          "fullFile": "D:\\Bootcamp QA\\uiAutomation_nyoba doang\\Test Case\\tc03_checkout.js",
+          "file": "\\Test Case\\tc03_checkout.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"SAUCEDEMO\"",
+              "fullTitle": "SAUCEDEMO \"before each\" hook in \"SAUCEDEMO\"",
+              "timedOut": false,
+              "duration": 2883,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// console.log('before test');\ndriver = await new Builder()\n    .forBrowser('chrome')\n    .setChromeOptions(options)\n    .build();\nawait driver.manage().window().maximize();\nawait driver.get('https://www.saucedemo.com/v1/');\nconst loginPage = new LoginPage(driver);\nawait loginPage.login(\"standard_user\", \"secret_sauce\");",
+              "err": {},
+              "uuid": "32bb98f7-e306-470a-bde9-9509164b2b52",
+              "parentUUID": "e019b1bd-4455-472c-b4a3-463d1adcb9b9",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"SAUCEDEMO\"",
+              "fullTitle": "SAUCEDEMO \"after each\" hook in \"SAUCEDEMO\"",
+              "timedOut": false,
+              "duration": 2127,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// console.log('after test');\nawait driver.sleep(2000);\nawait driver.quit();",
+              "err": {},
+              "uuid": "89aaef22-020d-4a6b-b10e-ea6a0bb151b1",
+              "parentUUID": "e019b1bd-4455-472c-b4a3-463d1adcb9b9",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Checkout",
+              "fullTitle": "SAUCEDEMO Checkout",
+              "timedOut": false,
+              "duration": 2141,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const checkoutPage = new CheckoutPage(driver);\nawait checkoutPage.clickAddToCart();\nawait checkoutPage.clickCart();\nawait checkoutPage.clickCheckout();\nawait checkoutPage.fillForm(\"yono\", \"bakrie\", \"12345\");\nawait checkoutPage.clickContinue();\nawait checkoutPage.clickFinish();\nconst isCheckoutComplete = await checkoutPage.assertCheckoutComplete();\nassert.strictEqual(isCheckoutComplete, true, \"Checkout tidak berhasil\");\nlet full_ss = await driver.takeScreenshot();\nfs.writeFileSync('report_ss/checkout/success checkout.png', Buffer.from(full_ss, 'base64'));",
+              "err": {},
+              "uuid": "4667d12b-91a7-4bc4-b9ec-c1b30511d79f",
+              "parentUUID": "e019b1bd-4455-472c-b4a3-463d1adcb9b9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4667d12b-91a7-4bc4-b9ec-c1b30511d79f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2141,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 50000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.4"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "tc03_checkout",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report/report_checkout",
+        "reportFilename": "tc03_checkout"
+      },
+      "version": "6.3.0"
+    }
+  }
+}

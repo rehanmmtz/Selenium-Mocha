@@ -1,0 +1,198 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-27T19:24:24.986Z",
+    "end": "2025-10-27T19:24:48.580Z",
+    "duration": 23594,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f9ca1912-97b5-44b9-8ad2-54cbb008adad",
+      "title": "",
+      "fullFile": "D:\\Bootcamp QA\\uiAutomation_nyoba doang\\Test Case\\tc02_sort.js",
+      "file": "\\Test Case\\tc02_sort.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9066e4aa-1fcf-4266-a504-0a137d99e47a",
+          "title": "Test SAUCEDEMO",
+          "fullFile": "D:\\Bootcamp QA\\uiAutomation_nyoba doang\\Test Case\\tc02_sort.js",
+          "file": "\\Test Case\\tc02_sort.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"Test SAUCEDEMO\"",
+              "fullTitle": "Test SAUCEDEMO \"before each\" hook in \"Test SAUCEDEMO\"",
+              "timedOut": false,
+              "duration": 2079,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// console.log('before test');\ndriver = await new Builder()\n    .forBrowser('chrome')\n    .setChromeOptions(options)\n    .build();\nawait driver.manage().window().maximize();\nawait driver.get('https://www.saucedemo.com/v1/');\nconst loginPage = new LoginPage(driver);\nawait loginPage.login(\"standard_user\", \"secret_sauce\");",
+              "err": {},
+              "uuid": "382782a0-d3f6-4643-a210-acf527a96d43",
+              "parentUUID": "9066e4aa-1fcf-4266-a504-0a137d99e47a",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"Test SAUCEDEMO\"",
+              "fullTitle": "Test SAUCEDEMO \"after each\" hook in \"Test SAUCEDEMO\"",
+              "timedOut": false,
+              "duration": 2097,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// console.log('after test');\nawait driver.sleep(2000);\nawait driver.quit();",
+              "err": {},
+              "uuid": "227c993a-db83-4ec4-92a0-18e8d1fae0c4",
+              "parentUUID": "9066e4aa-1fcf-4266-a504-0a137d99e47a",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "sort price high to low",
+              "fullTitle": "Test SAUCEDEMO sort price high to low",
+              "timedOut": false,
+              "duration": 340,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const sortPage = new sort(driver);\nawait sortPage.sortPriceHighToLow();\nconst isCorrectPrice = await sortPage.assertHilo();\nassert.strictEqual(isCorrectPrice, true, \"Produk dari harga tertinggi tidak sesuai\");\nlet full_ss = await driver.takeScreenshot();\nfs.writeFileSync('report_ss/sort/high to low.png', Buffer.from(full_ss, 'base64'));",
+              "err": {},
+              "uuid": "92507abb-0ba1-4cba-866b-6301dff77f4d",
+              "parentUUID": "9066e4aa-1fcf-4266-a504-0a137d99e47a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "sort price low to high",
+              "fullTitle": "Test SAUCEDEMO sort price low to high",
+              "timedOut": false,
+              "duration": 378,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const sortPage = new sort(driver);\nawait sortPage.sortPriceLowToHigh();\nconst isCorrectPrice = await sortPage.assertLohi();\nassert.strictEqual(isCorrectPrice, true, \"Produk dari harga terendah tidak sesuai\");\nlet full_ss = await driver.takeScreenshot();\nfs.writeFileSync('report_ss/sort/low to high.png', Buffer.from(full_ss, 'base64'));",
+              "err": {},
+              "uuid": "423c0b26-05d2-4432-bd42-8915624a268b",
+              "parentUUID": "9066e4aa-1fcf-4266-a504-0a137d99e47a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "sort A to Z",
+              "fullTitle": "Test SAUCEDEMO sort A to Z",
+              "timedOut": false,
+              "duration": 375,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const sortPage = new sort(driver);\nawait sortPage.sortAtoZ();\nconst isCorrectName = await sortPage.assertAtoZ();\nassert.strictEqual(isCorrectName, true, \"Produk dari A to Z tidak sesuai\");\nlet full_ss = await driver.takeScreenshot();\nfs.writeFileSync('report_ss/sort/A to Z.png', Buffer.from(full_ss, 'base64'));",
+              "err": {},
+              "uuid": "a21d8d91-a299-42c7-ae19-735737f6d1d8",
+              "parentUUID": "9066e4aa-1fcf-4266-a504-0a137d99e47a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "sort Z to A",
+              "fullTitle": "Test SAUCEDEMO sort Z to A",
+              "timedOut": false,
+              "duration": 390,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const sortPage = new sort(driver);\nawait sortPage.sortZtoA();\nconst isCorrectName = await sortPage.assertZtoA();\nassert.strictEqual(isCorrectName, true, \"Produk dari Z to A tidak sesuai\");\nlet full_ss = await driver.takeScreenshot();\nfs.writeFileSync('report_ss/sort/Z to A.png', Buffer.from(full_ss, 'base64'));",
+              "err": {},
+              "uuid": "bc43f19c-9a33-4bc4-b5d4-b2aba9d08ae9",
+              "parentUUID": "9066e4aa-1fcf-4266-a504-0a137d99e47a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "92507abb-0ba1-4cba-866b-6301dff77f4d",
+            "423c0b26-05d2-4432-bd42-8915624a268b",
+            "a21d8d91-a299-42c7-ae19-735737f6d1d8",
+            "bc43f19c-9a33-4bc4-b5d4-b2aba9d08ae9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1483,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 50000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.4"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "tc02_sort",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report/report_sort",
+        "reportFilename": "tc02_sort"
+      },
+      "version": "6.3.0"
+    }
+  }
+}
